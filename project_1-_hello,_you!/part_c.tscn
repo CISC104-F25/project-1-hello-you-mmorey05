@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://clhttn3a0ep70"]
+[gd_scene load_steps=3 format=3 uid="uid://clhttn3a0ep70"]
+
+[ext_resource type="Texture2D" uid="uid://d3cmjtfawxf61" path="res://icon.svg" id="1_3seef"]
+[ext_resource type="Texture2D" uid="uid://dhgn2hn6kc5b6" path="res://Awp pic for cisc Project 1 part c.jpg" id="2_tlj50"]
 
 [node name="Part_C" type="Control"]
 layout_mode = 3
@@ -8,12 +11,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlaceholderLabel" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 656.0
+offset_right = 704.0
+offset_bottom = 161.0
+scale = Vector2(6.24325, 3.45833)
 theme_override_font_sizes/font_size = 20
-text = "Add more labels, images, and other Control nodes to this scene to build your personal poster for Part C.
+text = "Fun faact about me is that i'm 6'7 and im a 2 time Vex Nations champion."
 
-Remember that you may need to scroll down to \"Theme Overrides > Font Sizes\" in the Inspector 
-to make your labels big enough to read. (This is font size 20px, for reference)."
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(360, 1252)
+scale = Vector2(3.99219, 5.57031)
+texture = ExtResource("1_3seef")
+
+[node name="AwpPicForCiscProject1PartC" type="Sprite2D" parent="."]
+position = Vector2(1894, 1187)
+scale = Vector2(6.2, 4.36905)
+texture = ExtResource("2_tlj50")

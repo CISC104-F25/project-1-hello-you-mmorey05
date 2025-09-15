@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://clwrsdsnmy3md"]
+
+[ext_resource type="PackedScene" uid="uid://4sy4oeoj170" path="res://Car.tscn" id="1_wwt5c"]
+[ext_resource type="PackedScene" uid="uid://clhttn3a0ep70" path="res://part_c.tscn" id="2_1acc2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwt5c"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_1acc2"]
+sky_material = SubResource("ProceduralSkyMaterial_wwt5c")
+
+[sub_resource type="Environment" id="Environment_y1gf4"]
+background_mode = 2
+sky = SubResource("Sky_1acc2")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6jki"]
+albedo_color = Color(0, 0, 0.619608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ys316"]
+material = SubResource("StandardMaterial3D_m6jki")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys316"]
+albedo_color = Color(0.21448, 0.1344, 0.28, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to4tk"]
+albedo_color = Color(1, 0.427451, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0jsbj"]
+material = SubResource("StandardMaterial3D_to4tk")
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6bo7"]
+albedo_color = Color(0.03, 1, 0.0784999, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_eso0h"]
+material = SubResource("StandardMaterial3D_q6bo7")
+
+[node name="Part_A" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y1gf4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, -3.36503, 0.0858469, 0.409698)
+mesh = SubResource("BoxMesh_ys316")
+surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
+
+[node name="pillar 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.89646, 4.54568, -11.7758)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+
+[node name="pillar 2" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7047, 4.42889, -11.7947)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="pillar 3" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.89283, 4.54568, 11.8978)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="pillar 4" type="MeshInstance3D" parent="MeshInstance3D4/pillar 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6717, 0.0442152, 0.384207)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, -3.37522, 8.72866, 0.50279)
+mesh = SubResource("BoxMesh_ys316")
+surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
+
+[node name="pillar 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.89283, 13.292, -11.7165)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="pillar 3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6346, 13.0842, -11.8843)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="pillar 4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63201, 13.3041, 12.3634)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="pillar 5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4794, 13.1811, 12.189)
+mesh = SubResource("CylinderMesh_0jsbj")
+
+[node name="pillar top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4512, 17.6198, 12.102)
+mesh = SubResource("PrismMesh_eso0h")
+
+[node name="pillar top2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62598, 17.6198, 12.2907)
+mesh = SubResource("PrismMesh_eso0h")
+
+[node name="pillar top3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5311, 17.6198, -11.8815)
+mesh = SubResource("PrismMesh_eso0h")
+
+[node name="pillar top4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94556, 17.6198, -11.8194)
+mesh = SubResource("PrismMesh_eso0h")
+
+[node name="Part_B" parent="." instance=ExtResource("1_wwt5c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.00957, 0, 23.3086)
+
+[node name="Part_C" parent="." instance=ExtResource("2_1acc2")]
+
+[node name="Camera3D" type="Camera3D" parent="Part_C"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142914, 4.79016, 61.9849)
+fov = 40.8

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://4sy4oeoj170"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vq3a5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gn0ur"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u6u1k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nsn63"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_id878"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_3sstj"]
+size = Vector3(2, 1, 1)
+
+[node name="Part_B" type="Node3D"]
+
+[node name="front seat" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vq3a5")
+
+[node name="back seat" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00903)
+mesh = SubResource("BoxMesh_gn0ur")
+
+[node name="Wheel 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.503867, -0.359906, 0.248528)
+mesh = SubResource("SphereMesh_u6u1k")
+
+[node name="wheel 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.670235, -0.373763, 0.257004)
+mesh = SubResource("SphereMesh_nsn63")
+
+[node name="wheel 3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.558342, -0.366732, -1.32239)
+mesh = SubResource("SphereMesh_id878")
+
+[node name="Wheel 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.668392, -0.359906, -1.31967)
+mesh = SubResource("SphereMesh_u6u1k")
+
+[node name="roof _ sunroof" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.00866, -0.496201)
+mesh = SubResource("PrismMesh_3sstj")
